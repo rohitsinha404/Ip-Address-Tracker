@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABO1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////l9Pff8fS54ein2eOn2eL9/v684unr9vj7/f7c8PSl2eKHzNil2OLv+Prz+vue1eB3xdOq2uPm9Pf29/vy8/n3/Py13+eEyteZ097P6u/2+/zByeKOm8r8/f7u+Pq+4+qOz9uU0dzo9fjb4O5meLbh5fH0+vvV7fHx+fv8/P2Gk8Wbps+44eim2eLW2+xkdrXO1Oit3OWttthperja3u7u+Pn6+/2hrNJneLfFy+P7+/23v92IlcbN0ufx8/nj5/Kbp9BsfbltfrqAj8ORnsvg5PD+/v/v8ffQ1em0vduqtNfn6vS/61TcAAAAHHRSTlMAAAQqbK3Z8v0DN5ff+xqJ6jbC/kHBAjjp3qz8qSKHsgAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiChMPAx5FOtlkAAABSUlEQVQ4y4WTZ2OCMBCGc4IMEXAPjB10771t7dLuXbv3/v+/oNigIYjN+4HcJU9CcgMhVxASxLAkK4oshUUhBIgVqBEtqmNXelSLqF4EwDBjmFHMNADoejyRxD4lE/EGAZCScICkFCGc/YHrDkHOACON2yhtOABkTNxWZgYQZHPeqWKH18tlAakas6ezi3E1FQl5Fuhm3LyARD0AsIs9vSSmIrJwC9DXPzA4NEx8C0ktwMjo2PiE3YgFkokxOdUEpmdm5+YXXEBGCjEWl5bpHVZKq2tlMq+gAjHWNza9r9jarpD5QuMX1Z3dv3Fvn72T3LzkweFRfSgd+xJGn3lyeuZ8K+csYNFAXVzWrqr+bDmBoqG+vqnd3t3bDOCE2push8en55fXNzZZTLrfPz6/vn+oX083t2C4JccvWm7Z8xuH33r85v2v/X8Bp/FiyVLnL/0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMTAtMTlUMTU6MDM6MzArMDI6MDCzEaEaAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTEwLTE5VDE1OjAzOjMwKzAyOjAwwkwZpgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="
+        type="image/x-icon">
+    <title>IP Address Tracker</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="/assets/index-435c0898.css">
+</head>
+
+<body class="font-[Rubik]">
+
+
+    <div id="wrapper" class=" h-[100vh] w-[100vw] realtive flex flex-col items-center justify-center overflow-hidden">
+
+        <div id="part1" class="bg-cover h-[30vh] w-[100vw]  flex justify-center items-center overflow-hidden"
+            style="background-image: url('/assets/pattern-bg-desktop-0c9c657e.png')  ">
+            <div id=" input" class="gap-0 flex justify-center  ">
+                <input type="text" placeholder="Enter any  IP  Address " id="myInput"
+                    class="rounded-tl-3xl rounded-bl-3xl lg:px-8 px-5 py-3 font-bold">
+                <button onclick="getIp()" id="btn" class="bg-gray-700 lg:px-8 px-5 py-3 rounded-tr-3xl rounded-br-3xl">
+                    <img src="/assets/icon-arrow-01e6ab28.svg" alt=""></button>
+            </div>
+        </div>
+
+        <div id="output" class=" text-lg   bg-white  flex lg:flex-row flex-col lg:gap-10  gap-2 items-center justify-center px-4 py-6 absolute top-[24vh] z-30 rounded-lg 
+            
+             
+            
+            ">
+            <div class="flex flex-col items-center justify-center">
+                <p class="text-[#969696]">IP ADDRESS</p>
+                <p id="ipBox">8.8.8.8</p>
+            </div>
+            <div class="  w-[1px] bg-gray-300 lg:h-20 h-0"></div>
+            <div class="flex flex-col items-center justify-center">
+                <p class="text-[#969696]">LOCATION</p>
+                <p id="locBox">New Delhi , IN</p>
+            </div>
+            <div class="w-[1px] bg-gray-300 lg:h-20 h-0"></div>
+            <div class="flex flex-col items-center justify-center">
+                <p class="text-[#969696]">TIMEZONE</p>
+                <p id="timeBox">IST +05:30</p>
+            </div>
+            <div class="w-[1px] bg-gray-300 lg:h-20 h-0"></div>
+            <div class="flex flex-col items-center justify-center">
+                <p class="text-[#969696]">ISP</p>
+                <p id="ispBox">SpaceX Starlink</p>
+            </div>
+        </div>
+
+        <div id='map' class="w-[100vw] h-[70vh]"></div>
+
+    </div>
+
+    <script src="assets/index.js">
+
+    </script>
+
+
+</body>
+
+</html>
